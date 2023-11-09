@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileCW1.HikeList"
+             Title="HikeList">
+
+    <StackLayout>
+        <FlexLayout JustifyContent="End" Margin="10">
+            <Button Text="Delete All" Clicked="DeleteAllClick" />
+        </FlexLayout>
+        <CollectionView x:Name="hikesCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <FlexLayout>
+                            <Label Text="Name: " FontAttributes="Bold" />
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                        </FlexLayout>
+                        <FlexLayout>
+                            <Label Text="Location: " />
+                            <Label Text="{Binding Location}" />
+                        </FlexLayout> 
+                        <FlexLayout>
+                            <Label Text="Parking Available: " />
+                            <Label Text="{Binding ParkingAvailable}" />
+                        </FlexLayout>
+                        <FlexLayout>
+                            <Label Text="Date: " />
+                            <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" />
+                        </FlexLayout>
+                        <FlexLayout>
+                            <Label Text="Length: " />
+                            <Label Text="{Binding Length}" />
+                        </FlexLayout>
+                        <FlexLayout>
+                            <Label Text="Difficulty: " />
+                            <Label Text="{Binding Difficulty}" />
+                        </FlexLayout>
+                        <FlexLayout>
+                            <Label Text="Description: " />
+                            <Label Text="{Binding Description}" LineBreakMode="WordWrap" />
+                        </FlexLayout>
+                        <FlexLayout JustifyContent="End">
+                            <Button Text="Edit" Clicked="EditHikeClick" Margin="0,0,2,0" />
+                            <Button Text="Delete"  Clicked="DeleteHikeClick" />
+                        </FlexLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileCW1.EditHike"
+             Title="EditHike">
+    <ScrollView>
+        <StackLayout Padding="16">
+            <Label Text="Name" />
+            <Entry x:Name="hikeName" Placeholder="Enter hike name" />
+
+            <Label Text="Location" />
+            <Entry x:Name="hikeLocation" Placeholder="Enter hike location" />
+
+            <Label Text="Parking Available" />
+            <Switch x:Name="parkingAvailable" IsToggled="false" HorizontalOptions="Start" />
+
+            <Label Text="Date" />
+            <DatePicker x:Name="hikeDate" />
+
+            <Label Text="Length" />
+            <Entry x:Name="hikeLength" Placeholder="Enter hike length" />
+
+            <Label Text="Difficulty" />
+            <Picker x:Name="hikeDifficulty">
+                <Picker.Items>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                    <x:String>Difficult</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Description" />
+            <Editor x:Name="hikeDescription" Placeholder="Enter hike description" HeightRequest="100" />
+
+            <FlexLayout JustifyContent="End">
+                <Button Text="Update" Clicked="OnUpdateCheck"  />
+            </FlexLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
